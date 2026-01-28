@@ -35,7 +35,9 @@ void setup() {
   pinMode(IN4, OUTPUT);
   
   // Set up Access Point
-  WiFi.softAP(ssid, password);
+  WiFi.mode(WIFI_AP);
+delay(100);
+WiFi.softAP(ssid, password, 1, false, 4);
   Serial.println();
   Serial.print("AP IP address: ");
   Serial.println(WiFi.softAPIP());
